@@ -1,5 +1,6 @@
 const validator = {
-  // ...
-};
+    // ...
 
-export default validator;
+};
+console.log('Prueba Commit 2s');
+//export default validator;
