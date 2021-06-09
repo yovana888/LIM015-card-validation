@@ -16,17 +16,38 @@ body {
     grid-template-rows: 25fr 50fr;
 }
 
+.container2 {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: 20fr 63fr;
+}
+
 .container-small {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .box3 {
-    grid-column: 1/2;
+    grid-column: 1/3;
 }
 
 .box4 {
-    grid-column: 2/3;
+    grid-column: 3/4;
+    margin-left: -60px;
+    width: 130%;
+}
+
+.form-group {
+    margin-top: 20px;
+    display: flex;
+    width: 200px;
+    flex-wrap: nowrap;
+}
+
+.form-group-text {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .box1 {
@@ -34,6 +55,14 @@ body {
     background-image: url(img/img1.png);
     border-radius: 20px 20px 0px 0px;
     padding: 2em;
+    color: #fff;
+}
+
+.box5 {
+    grid-column: 2/3;
+    background-image: url(img/img1.png);
+    border-radius: 20px 20px 0px 0px;
+    padding: 1em;
     color: #fff;
 }
 
@@ -51,6 +80,10 @@ body {
 
 .mb-2 {
     margin-bottom: 2%;
+}
+
+.ml-2 {
+    margin-left: 0.7em;
 }
 
 .badge {
@@ -77,6 +110,13 @@ body {
     font-size: 11px;
     line-height: 1.5;
     margin-top: -12px;
+}
+
+.txt-muted {
+    font-size: .9375rem;
+    color: #75727c;
+    margin-top: 17px;
+    margin-left: 1em;
 }
 
 .form-control {
@@ -109,10 +149,20 @@ input[type=text]:focus {
     outline: none !important;
 }
 
-.btn-green {
+input[type=number]:focus {
+    border: 1px solid #808cf1;
+    outline: none !important;
+}
+
+input[type=password]:focus {
+    border: 1px solid #808cf1;
+    outline: none !important;
+}
+
+.btn-primary {
     padding: .375rem .75rem;
     border-radius: 10px;
-    background-color: #b86fff;
+    background: linear-gradient(to right, #e63c93, #ff6e7b);
     color: #fff;
     transition: background-color .15s ease-in-out;
     border: none;
@@ -121,4 +171,17 @@ input[type=text]:focus {
     font-size: 15px;
     cursor: pointer;
     margin-top: 5%;
+}
+
+.btn-secondary {
+    border-radius: 10px;
+    background: linear-gradient(to right, #e63c93, #ff6e7b);
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+    border: none;
+    height: 40px;
+    width: 110px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 2%;
 }
