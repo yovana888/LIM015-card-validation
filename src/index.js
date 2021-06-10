@@ -10,10 +10,11 @@ function cardFormat() {
 }
 
 //4137-8947-1175-5904
-function showViewMaskify(maskifyCreditCardNumber) {
+function showViewMaskify(maskifyCreditCardNumber, typeCreditCard) {
     let hoy = new Date();
     document.getElementById("text-maskify").innerHTML = maskifyCreditCardNumber;
-    document.getElementById("text-fecha").innerHTML = hoy.getFullYear() + '/' + hoy.getMonth() + '/' + hoy.getDay() + '  ' + hoy.getHours() + ':' + hoy.getMinutes();
+    document.getElementById("text-type").innerHTML = typeCreditCard;
+    document.getElementById("text-fecha").innerHTML = hoy.getDay() + '/' + hoy.getMonth() + '/' + hoy.getFullYear() + '  ' + hoy.getHours() + ':' + hoy.getMinutes();
     document.getElementById("view_inicial").style = "display:none";
     document.getElementById("view_final").style = "visibility: show";
 
@@ -28,7 +29,7 @@ document.getElementById("btn-validar").addEventListener("click", function() {
         case true:
             let maskifyCreditCardNumber = validator.maskify(creditCardNumber);
             let typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
-            showViewMaskify(maskifyCreditCardNumber);
+            showViewMaskify(maskifyCreditCardNumber, typeCreditCard);
             break;
         case false:
             alert('Tarjeta Invalida');

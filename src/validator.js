@@ -50,18 +50,29 @@ function maskify(creditCardNumber) {
 
 function getTypeCreditCard(creditCardNumber) {
     creditCardNumber = creditCardNumber.replace(/-/g, '');
-    switch (creditCardNumber) {
-        case true:
-            let maskifyCreditCardNumber = validator.maskify(creditCardNumber);
-            let typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
-            showViewMaskify(maskifyCreditCardNumber);
-            break;
-        case false:
-            alert('Tarjeta Invalida');
-            break;
-        default:
-            alert('Por favor Verifique sus Datos, recuerde que el Numero de Tarjeta debe contener solo Numeros y de 16 digitos');
+    let visaRegEx = /^4[0-9]{6,}$/; // Las Visas empiezan por 4.
+    let mastercardRegEx = /^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$/; // Los números de las MasterCard empezaban del  51 al 55 o 222100-272099.
+    let amexpRegEx = /^3[47][0-9]{5,}$/; //Los números de American Express empiezan por 34 o 37.
+    let discovRegEx = /^6(?:011|5[0-9]{2})[0-9]{3,}$/; //Discover empiezan por 6011 o 65.
+    let jbcRexEx = /^(?:2131|1800|35[0-9]{3})[0-9]{3,}$/; //JCB empiezan por  2131, 1800 o 35.
+    let typeCreditCard;
+
+    if (visaRegEx.test(creditCardNumber)) {
+        typeCreditCard = 'VISA';
+    } else if (mastercardRegEx.test(creditCardNumber)) {
+        typeCreditCard = 'MasterCard';
+    } else if (amexpRegEx.test(creditCardNumber)) {
+        typeCreditCard = 'American Express';
+    } else if (discovRegEx.test(creditCardNumber)) {
+        typeCreditCard = 'Discover';
+    } else if (jbcRexEx.test(creditCardNumber)) {
+        typeCreditCard = 'JBC';
+    } else {
+        typeCreditCard = 'Tipo de Tarjeta no Identificada';
     }
+
+    return typeCreditCard;
+
 }
 
 export const validator = {
