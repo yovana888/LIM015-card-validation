@@ -23,12 +23,13 @@ function showViewMaskify(maskifyCreditCardNumber, typeCreditCard) {
 document.getElementById("numero-tarjeta").addEventListener("keypress", cardFormat);
 
 document.getElementById("btn-validar").addEventListener("click", function() {
-    let creditCardNumber = document.getElementById("numero-tarjeta").value;
+    //Cambair valor
+    const creditCardNumber = document.getElementById("numero-tarjeta").value;
     let respuesta = validator.isValid(creditCardNumber);
     switch (respuesta) {
         case true:
-            let maskifyCreditCardNumber = validator.maskify(creditCardNumber);
-            let typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
+            const maskifyCreditCardNumber = validator.maskify(creditCardNumber);
+            const typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
             showViewMaskify(maskifyCreditCardNumber, typeCreditCard);
             break;
         case false:
