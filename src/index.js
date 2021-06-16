@@ -35,12 +35,12 @@ document.getElementById("btn-validar").addEventListener("click", function() {
             alert('Tarjeta Invalida');
             break;
         default:
-            alert('Por favor Verifique sus Datos, recuerde que el Numero de Tarjeta debe contener solo Numeros y de 16 digitos');
+            alert('Por favor Verifique sus Datos, recuerde que el Numero de Tarjeta debe contener solo Numeros y de 12 digitos como minimo');
     }
 });
 
 document.getElementById("btn-volver").addEventListener("click", function() {
+    document.getElementById("formValid").reset();
     document.getElementById("view_inicial").style = "visibility: show";
     document.getElementById("view_final").style = "display:none";
-    document.getElementById("numero-tarjeta").value = "";
 });

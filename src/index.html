@@ -1,88 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
-    <!-- link a google fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main></main>
-    <div class="container" id="view_inicial">
-        <div class="box box1">
-            <h4>Pagar con Tarjeta de Crédito</h4>
-            <label class=" mb-3 badge badge-success">TOTAL</label>
-            <h2 class="mb-2">S/. 1,099.00</h2>
+    <div class="container">
+        <div class="item-a">
+            <label class="descuento">- 20%</label>
+            <img src="img/zapatilla.jpg" class="img-producto">
+            <p class="txt-descripcion"> Sneakers Vanz </p>
         </div>
+        <form class="item-b" action="" id="formValid">
+            <div id="view_inicial">
+                <h3 class="text-primary">Payment Details</h3>
 
-        <div class="box box2">
+                <p class="text-secondary" id="text-name">CARDHOLDER NAME</p>
+                <input type="text" class="form-control" id="titular" placeholder="Deena Neff">
 
-            <p class="txt-primary">Titular de la Tarjeta</p>
-            <p class="txt-secondary">Esto lo puedes encontrar al frente de tu tarjeta</p>
-            <input type="text" class="form-control" id="titular" placeholder="Deena Neff">
-            <br>
-            <p class="txt-primary">Numero de Tarjeta</p>
-            <p class="txt-secondary">Los Digitos se encuentran al frente de tu tarjeta</p>
-            <input class="form-control" type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" id="numero-tarjeta" placeholder="0000 0000 0000 0000">
-            <br>
-            <div class="container-small">
-                <div class="box3">
-                    <p class="txt-primary">Fecha de Caducidad</p>
+                <p class="text-secondary">CARD NUMBER</p>
+                <input type="text" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" id="numero-tarjeta">
+
+                <div class="item-c">
+                    <p class="text-secondary">EXPIRATION DATE</p>
+                    <p class="text-secondary ml-10">CVV</p>
+                </div>
+
+                <div class="item-c">
                     <div class="form-group">
-                        <input type="number" class="form-control-sm" id="mes-caducidad" placeholder="MM" maxlength="2" min="01" max="12"> <span class="ml-2">/</span>
-                        <input type="number" class="form-control-sm ml-2" id="anio-caducidad" placeholder="YY" maxlength="2" min="21" max="29" step="1">
+                        <input type="text" class="form-control input-date" id="mes-caducidad" placeholder="MM" maxlength="2"> <span class="text-separation ml-2">/</span>
+                        <input type="text" class="form-control ml-2  input-date" id="anio-caducidad" placeholder="YY" maxlength="2">
+                        <input type="text" class="form-control ml-2" id="cvv" placeholder="***" maxlength="3">
                     </div>
                 </div>
-                <div class="box4">
-                    <p class="txt-primary">CVV</p>
-                    <input type="password" class="form-control-sm" id="cvv" placeholder="***" maxlength="3">
 
-                </div>
+                <p class="payment">Total to Pay<span id="precio"> $30.25</span></p>
+                <button class="btn-primary" type="button" id="btn-validar">Buy Now</button>
             </div>
 
-            <button class="btn-primary" type="button" id="btn-validar">Verificar</button>
-        </div>
+            <div class="item-b" id="view_final" style="display:none">
+                <h3 class="text-primary">Payment Summary</h3>
+                <img src="img/006-slip.png" class="img-check">
+                <li class="text-secondary">CARD NUMBER: <span class="text-purple" id="text-maskify"> </span></li>
+                <li class="text-secondary">CARD TYPE: <span class="text-purple" id="text-type"> </span></li>
+                <li class="text-secondary">DATE - HOUR: <span class="text-purple" id="text-fecha"> </span></li>
+                <li class="text-secondary">AMOUNT: <span class="text-purple"> $30.25</span></li>
+
+                <button class="btn-primary" type="submit" id="btn-volver">Inicio</button>
+            </div>
+
+        </form>
     </div>
-    <!--Fin ViewInicial-->
 
-    <div class="container2" id="view_final" style="display:none">
-        <div class="box box5">
-            <h4 class="ml-2">Constancia de Pago (Tarjeta Valida)</h4>
-        </div>
-
-        <div class="box box2">
-            <div class="form-group-text">
-                <p class="txt-primary">Tipo de Tarjeta: </p>
-                <p class="txt-muted" id="text-type"></p>
-            </div>
-
-            <div class="form-group-text">
-                <p class="txt-primary">Numero de Tarjeta: </p>
-                <p class="txt-muted" id="text-maskify"></p>
-            </div>
-
-            <div class="form-group-text">
-                <p class="txt-primary">Fecha - Hora: </p>
-                <p class="txt-muted" id="text-fecha"></p>
-            </div>
-
-            <div class="form-group-text">
-                <p class="txt-primary"> Importe: </p>
-                <p class="txt-muted">S/. 1,099.00</p>
-            </div>
-
-
-            <button class="btn-secondary" type="button" id="btn-volver">Volver</button>
-
-        </div>
-    </div>
-    <!--Fin ViewFinal-->
     <footer></footer>
     <script src="index.js" type="module"></script>
+
 </body>
 
 </html>

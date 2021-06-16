@@ -44,7 +44,11 @@ function luhn_algorithm(creditCardNumber) {
 
 function maskify(creditCardNumber) {
     creditCardNumber = creditCardNumber.replace(/-/g, '');
-    let maskifyCreditCardNumber = creditCardNumber.replace(/.(?=.{4})/g, "#");
+    let array_num_tarjeta = Array.from(creditCardNumber);
+    for (let i = 0; i < array_num_tarjeta.length - 4; i++) {
+        array_num_tarjeta[i] = '#';
+    }
+    let maskifyCreditCardNumber = array_num_tarjeta.join("");
     return maskifyCreditCardNumber;
 }
 
