@@ -44,4 +44,4 @@ Es la persona que quiere realizar una compra de un articulo de una tienda y dese
  
  ## 3.4 Link al Proyecto
  
- LIM015-card-validation/src/
+ https://yovana888.github.io/LIM015-card-validation/src/
