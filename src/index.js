@@ -1,15 +1,24 @@
 import validator from './validator.js';
 
-const btnEnviar = document.getElementById("btnEnviar");
+let hoy = new Date();
+const creditCardNumber = document.querySelector('#creditCardNumber');
+const formValid = document.querySelector('#formValid');
+const btnEnviar = document.querySelector('#btnEnviar');
+const btnVolver = document.querySelector('#btnVolver');
+const viewInicial = document.querySelector('#viewInicial');
+const viewFinal = document.querySelector('#viewFinal');
+const textMaskify = document.querySelector('#textMaskify');
+const textType = document.querySelector('#textType');
+const textDate = document.querySelector('#textDate');
+
 
 btnEnviar.addEventListener('click', () => {
-    let creditCardNumber = document.getElementById("numero-tarjeta").value;
-    let respuesta = validator.isValid(creditCardNumber);
+    let respuesta = validator.isValid(creditCardNumber.value);
     switch (respuesta) {
         case true:
             {
-                let maskifyCreditCardNumber = validator.maskify(creditCardNumber);
-                let typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
+                let maskifyCreditCardNumber = validator.maskify(creditCardNumber.value);
+                let typeCreditCard = validator.getTypeCreditCard(creditCardNumber.value);
                 showViewMaskify(maskifyCreditCardNumber, typeCreditCard);
                 break;
             }
@@ -27,33 +36,29 @@ btnEnviar.addEventListener('click', () => {
 });
 
 
-const cardFormat = document.getElementById("numero-tarjeta");
-
-cardFormat.addEventListener('click', () => {
-    let numero_temporal = document.getElementById("numero-tarjeta").value;
+creditCardNumber.addEventListener('keypress', () => {
+    let numero_temporal = creditCardNumber.value;
     let rawNumbers = numero_temporal.replace(/-/g, '');
     let cardLength = rawNumbers.length;
     if (cardLength !== 0 && cardLength <= 12 && cardLength % 4 == 0) {
-        document.getElementById("numero-tarjeta").value = numero_temporal + '-';
+        creditCardNumber.value = numero_temporal + '-';
     }
 });
 
 
-const btnVolver = document.getElementById("btnVolver");
 
 btnVolver.addEventListener("click", function() {
-    document.getElementById("formValid").reset();
-    document.getElementById("view_inicial").style = "visibility: show";
-    document.getElementById("view_final").style = "display:none";
+    formValid.reset();
+    viewInicial.style = "visibility: show";
+    viewFinal.style = "display:none";
 });
 
 
 function showViewMaskify(maskifyCreditCardNumber, typeCreditCard) {
-    let hoy = new Date();
-    document.getElementById("text-maskify").innerHTML = maskifyCreditCardNumber;
-    document.getElementById("text-type").innerHTML = typeCreditCard;
-    document.getElementById("text-fecha").innerHTML = hoy.getDay() + '/' + hoy.getMonth() + '/' + hoy.getFullYear() + '  ' + hoy.getHours() + ':' + hoy.getMinutes();
-    document.getElementById("view_inicial").style = "display:none";
-    document.getElementById("view_final").style = "visibility: show";
+    textMaskify.innerHTML = maskifyCreditCardNumber;
+    textType.innerHTML = typeCreditCard;
+    textDate.innerHTML = hoy.getDay() + '/' + hoy.getMonth() + '/' + hoy.getFullYear() + '  ' + hoy.getHours() + ':' + hoy.getMinutes();
+    viewInicial.style = "display:none";
+    viewFinal.style = "visibility:show";
 
 }
