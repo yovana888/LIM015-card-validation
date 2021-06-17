@@ -7,7 +7,7 @@
 * [3. Investigación UX](#3-investigación-UX)
 *    [3.1 Usuarios y Objetivos](#3.1-Usuarios-y-Objetivos)
 *    [3.2 Necesidad del usuario](#3.2-Necesidad-del-usuario)
-*    [3.3 Prototipado](#3.3-Prototipo)
+*    [3.3 Prototipado](#3.3-Prototipado)
 *    [3.4 Link al Proyecto](#3.4-Link-al-Proyecto)
 
 ***
@@ -36,7 +36,7 @@ Es la persona que quiere realizar una compra de un articulo de una tienda y dese
  ## 3.2 Necesidad del usuario
  El usuario luego de haber recibido su tarjeta necesita estar seguro de que esta puede ser utilizada en su compra, para no llegar al momento de comprar y sorprenderse negativamente con su tarjeta invalida, este sería un gran problema para el usuario el que vamos a resolver agregando este ultimo paso de verificación.
 
- ## 3.3 Prototipo en papel 
+ ## 3.3 Prototipado
  
 ![Imagen de Prototipo 1](P1.png)
 ![Imagen de Prototipo 2](P2.png)
