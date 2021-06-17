@@ -7,7 +7,7 @@
 * [3. Investigación UX](#3-investigación-UX)
 *    [3.1 Usuarios y Objetivos](#3.1-Usuarios-y-Objetivos)
 *    [3.2 Necesidad del usuario](#3.2-Necesidad-del-usuario)
-*    [3.3 Prototipo en papel](#3.3-Prototipo)
+*    [3.3 Prototipado](#3.3-Prototipo)
 *    [3.4 Link al Proyecto](#3.4-Link-al-Proyecto)
 
 ***
@@ -18,8 +18,8 @@ La pagina web esta enfocada a la venta de articulos online, y en este proceso pa
 
 ## 2. Imagen del proyecto final
 
-![Imagen Proyecto Final1](P1.png)
-![Imagen Proyecto Final2](P2.png)
+![Imagen Proyecto Final1](P3.png)
+![Imagen Proyecto Final2](P4.png)
 
 
 ## 3. Investigación UX
