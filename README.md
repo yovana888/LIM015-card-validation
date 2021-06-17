@@ -1,4 +1,4 @@
-# Validación T/C Banco Lider
+# CARD VALIDATION
 
 ## Índice
 
@@ -44,4 +44,4 @@ Es la persona que quiere realizar una compra de un articulo de una tienda y dese
  
  ## 3.4 Link al Proyecto
  
- https://katherine-valcarce.github.io/SCL017-card-validation/src/
+ https://yovana888.github.io/LIM015-card-validation/src/
