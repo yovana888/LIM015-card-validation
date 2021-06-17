@@ -1,15 +1,53 @@
-import { validator } from './validator.js';
+import validator from './validator.js';
 
-function cardFormat() {
+const btnEnviar = document.getElementById("btnEnviar");
+
+btnEnviar.addEventListener('click', () => {
+    let creditCardNumber = document.getElementById("numero-tarjeta").value;
+    let respuesta = validator.isValid(creditCardNumber);
+    switch (respuesta) {
+        case true:
+            {
+                let maskifyCreditCardNumber = validator.maskify(creditCardNumber);
+                let typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
+                showViewMaskify(maskifyCreditCardNumber, typeCreditCard);
+                break;
+            }
+        case false:
+            {
+                alert('Tarjeta Invalida');
+                break;
+            }
+        default:
+            {
+                alert('Por favor Verifique sus Datos, recuerde que el Numero de Tarjeta debe contener solo Numeros y de 12 digitos como minimo');
+            }
+
+    }
+});
+
+
+const cardFormat = document.getElementById("numero-tarjeta");
+
+cardFormat.addEventListener('click', () => {
     let numero_temporal = document.getElementById("numero-tarjeta").value;
     let rawNumbers = numero_temporal.replace(/-/g, '');
     let cardLength = rawNumbers.length;
     if (cardLength !== 0 && cardLength <= 12 && cardLength % 4 == 0) {
         document.getElementById("numero-tarjeta").value = numero_temporal + '-';
     }
-}
+});
 
-//4137-8947-1175-5904
+
+const btnVolver = document.getElementById("btnVolver");
+
+btnVolver.addEventListener("click", function() {
+    document.getElementById("formValid").reset();
+    document.getElementById("view_inicial").style = "visibility: show";
+    document.getElementById("view_final").style = "display:none";
+});
+
+
 function showViewMaskify(maskifyCreditCardNumber, typeCreditCard) {
     let hoy = new Date();
     document.getElementById("text-maskify").innerHTML = maskifyCreditCardNumber;
@@ -19,29 +57,3 @@ function showViewMaskify(maskifyCreditCardNumber, typeCreditCard) {
     document.getElementById("view_final").style = "visibility: show";
 
 }
-
-document.getElementById("numero-tarjeta").addEventListener("keypress", cardFormat);
-
-document.getElementById("btn-validar").addEventListener("click", function() {
-    //Cambair valor
-    const creditCardNumber = document.getElementById("numero-tarjeta").value;
-    let respuesta = validator.isValid(creditCardNumber);
-    switch (respuesta) {
-        case true:
-            const maskifyCreditCardNumber = validator.maskify(creditCardNumber);
-            const typeCreditCard = validator.getTypeCreditCard(creditCardNumber);
-            showViewMaskify(maskifyCreditCardNumber, typeCreditCard);
-            break;
-        case false:
-            alert('Tarjeta Invalida');
-            break;
-        default:
-            alert('Por favor Verifique sus Datos, recuerde que el Numero de Tarjeta debe contener solo Numeros y de 12 digitos como minimo');
-    }
-});
-
-document.getElementById("btn-volver").addEventListener("click", function() {
-    document.getElementById("formValid").reset();
-    document.getElementById("view_inicial").style = "visibility: show";
-    document.getElementById("view_final").style = "display:none";
-});
