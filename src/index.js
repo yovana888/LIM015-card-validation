@@ -3,7 +3,6 @@ import validator from './validator.js';
 let hoy = new Date();
 const creditCardNumber = document.querySelector('#creditCardNumber');
 const formValid = document.querySelector('#formValid');
-const btnEnviar = document.querySelector('#btnEnviar');
 const btnVolver = document.querySelector('#btnVolver');
 const viewInicial = document.querySelector('#viewInicial');
 const viewFinal = document.querySelector('#viewFinal');
@@ -12,7 +11,8 @@ const textType = document.querySelector('#textType');
 const textDate = document.querySelector('#textDate');
 
 
-btnEnviar.addEventListener('click', () => {
+formValid.addEventListener("submit", function(e) {
+    e.preventDefault(); //stop form from submitting
     let respuesta = validator.isValid(creditCardNumber.value);
     switch (respuesta) {
         case true:
@@ -34,6 +34,7 @@ btnEnviar.addEventListener('click', () => {
 
     }
 });
+
 
 
 creditCardNumber.addEventListener('keypress', () => {

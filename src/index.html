@@ -18,15 +18,15 @@
             <img src="img/zapatilla.jpg" class="img-producto">
             <p class="txt-descripcion"> Sneakers Vanz </p>
         </div>
-        <form class="item-b" action="" id="formValid">
+        <form class="item-b" action="#" id="formValid">
             <div id="viewInicial">
                 <h3 class="text-primary">Payment Details</h3>
 
                 <p class="text-secondary" id="text-name">CARDHOLDER NAME</p>
-                <input type="text" class="form-control" id="titular" placeholder="Deena Neff">
+                <input type="text" class="form-control" id="titular" placeholder="Deena Neff" required>
 
                 <p class="text-secondary">CARD NUMBER</p>
-                <input type="text" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" id="creditCardNumber">
+                <input type="text" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" id="creditCardNumber" required>
 
                 <div class="item-c">
                     <p class="text-secondary">EXPIRATION DATE</p>
@@ -35,24 +35,24 @@
 
                 <div class="item-c">
                     <div class="form-group">
-                        <input type="text" class="form-control input-date" id="mes-caducidad" placeholder="MM" maxlength="2"> <span class="text-separation ml-2">/</span>
-                        <input type="text" class="form-control ml-2  input-date" id="anio-caducidad" placeholder="YY" maxlength="2">
-                        <input type="text" class="form-control ml-2" id="cvv" placeholder="***" maxlength="3">
+                        <input type="text" class="form-control input-date" id="mes-caducidad" placeholder="MM" maxlength="2" required> <span class="text-separation ml-2">/</span>
+                        <input type="text" class="form-control ml-2  input-date" id="anio-caducidad" placeholder="YY" maxlength="2" required>
+                        <input type="text" class="form-control ml-2" id="cvv" placeholder="***" maxlength="3" required>
                     </div>
                 </div>
 
                 <p class="payment">Total to Pay<span id="precio"> $30.25</span></p>
-                <button class="btn-primary" type="button" id="btnEnviar">Buy Now</button>
+                <button class="btn-primary" type="submit" id="btnEnviar">Buy Now</button>
             </div>
 
-            <div class="item-b" id="viewFinal" style="display:none">
+            <div class="item-b" id="viewFinal" style="display:none;">
                 <h3 class="text-primary">Payment Summary</h3>
                 <img src="img/006-slip.png" class="img-check">
                 <li class="text-secondary">CARD NUMBER: <span class="text-purple" id="textMaskify"> </span></li>
                 <li class="text-secondary">CARD TYPE: <span class="text-purple" id="textType"> </span></li>
                 <li class="text-secondary">DATE - HOUR: <span class="text-purple" id="textDate"> </span></li>
                 <li class="text-secondary">AMOUNT: <span class="text-purple"> $30.25</span></li>
-
+                <br>
                 <button class="btn-primary" type="submit" id="btnVolver">Inicio</button>
             </div>
 
